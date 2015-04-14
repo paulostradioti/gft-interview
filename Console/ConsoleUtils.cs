@@ -25,7 +25,7 @@ namespace ConsoleApp
             var marginLeft = ((Console.WindowWidth - text.Length - 2) / 2) - 2;
             var marginRight = Console.WindowWidth - marginLeft - text.Length - 2;
 
-            Console.Write(String.Format("{0}{1}{2}{3}{4}", "|", new String(' ', marginLeft), text, new String(' ', marginRight), "|"));
+            Console.Write("{0}{1}{2}{3}{4}", "|", new String(' ', marginLeft), text, new String(' ', marginRight), "|");
         }
     }
 }

@@ -1,10 +1,5 @@
-﻿using Domain.Entites;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using Domain.Entites;
 
 namespace Domain.Repositories
@@ -14,7 +9,7 @@ namespace Domain.Repositories
     /// </summary>
     public static class DishRepository
     {
-        private static List<Dish> _dishesContext = new List<Dish>()
+        private static List<Dish> _dishesContext = new List<Dish>
         {
             
             new Dish (1,"eggs", DishType.Entree, TimeOfDay.Morning, false),

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Domain.Repositories;
 using Domain.Utilities;
 
@@ -97,11 +94,10 @@ namespace Domain.Entites
             //Group the Selections by Id and Name
             //  ordering them by Id (wich, in our implementation, corresponts to the following order:
             //      entree, side, drink and dessert
-            var selections = Selections.Where(x => x != null).GroupBy(x => new {Id = x.Id, Name = x.Name}) 
+            var selections = Selections.Where(x => x != null).GroupBy(x => new {x.Id, x.Name}) 
                 .Select(p => new
                 {
-                    Id = p.Key.Id,
-                    Name = p.Key.Name,
+                    p.Key.Id, p.Key.Name,
                     Count = p.Count()
                 })
                 .OrderBy(x => x.Id); //
@@ -110,7 +106,7 @@ namespace Domain.Entites
             List<string> outputBuffer = new List<string>();
             
             // First thing to go in the Buffer is the Time of Day
-            string stringTimeOfDay = ((TimeOfDay)TimeOfDay).ToString();
+            string stringTimeOfDay = TimeOfDay.ToString();
             outputBuffer.Add(stringTimeOfDay);
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using Domain.Entites;
+using Domain.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Domain.Test
@@ -23,6 +24,19 @@ namespace Domain.Test
             order.GetTimeOfDay();
 
             Assert.AreEqual(order.TimeOfDay.ToString().ToLower(), expectedOutput);
+        }
+
+
+        [TestMethod]
+        [DeploymentItem("GetTimeOfDay_InvalidInput.xls")]
+        [DataSource("System.Data.Odbc", "Driver={Microsoft Excel Driver (*.xls)};DBQ=GetTimeOfDay_InvalidInput.xls;defaultdir=.", "Plan1$", DataAccessMethod.Sequential)]
+        [ExpectedException(typeof(InvalidTimeOfDayException))]
+        public void TestGetTimeOfDay_InvalidEntries()
+        {
+            var userInput = Convert.ToString(TestContext.DataRow["Input"]);
+            var order = new Order(userInput);
+
+            order.GetTimeOfDay();
         }
      
     }

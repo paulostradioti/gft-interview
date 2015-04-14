@@ -4,3 +4,4 @@ C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain\obj\Deb
 C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain\obj\Debug\Domain.pdb
 C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain\bin\Debug\GetTimeOfDay_ValidInput.xls
 C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain\bin\Debug\GetTimeOfDay_InvalidInput.xls

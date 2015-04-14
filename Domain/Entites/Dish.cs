@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.Entites
+﻿namespace Domain.Entites
 {
     /// <summary>
     /// This class represents a dish that the user can choose in the options.

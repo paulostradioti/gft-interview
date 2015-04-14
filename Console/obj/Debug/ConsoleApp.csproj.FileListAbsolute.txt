@@ -3,7 +3,7 @@ C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\De
 C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\ConsoleApp.pdb
 C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\Domain.dll
 C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\Domain.pdb
-C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
 C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\obj\Debug\ConsoleApp.exe
 C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\obj\Debug\ConsoleApp.pdb
 C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\GetTimeOfDay_ValidInput.xls
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\GetTimeOfDay_InvalidInput.xls

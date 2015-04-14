@@ -2,7 +2,6 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using Domain.Entites;
-using Domain.Exceptions;
 
 namespace Domain.Utilities
 {
@@ -41,7 +40,7 @@ namespace Domain.Utilities
                 return false;
 
             TimeOfDay timeOfDay;
-            return Enum.TryParse<TimeOfDay>(text, true, out timeOfDay);
+            return Enum.TryParse(text, true, out timeOfDay);
             
         }
 
@@ -53,7 +52,7 @@ namespace Domain.Utilities
         public static TimeOfDay ConvertToTimeOfDay(this string text)
         {
             TimeOfDay timeOfDay;
-            Enum.TryParse<TimeOfDay>(text, true, out timeOfDay);
+            Enum.TryParse(text, true, out timeOfDay);
 
             return timeOfDay;
         }
