@@ -29,6 +29,11 @@ namespace Domain.Utilities
             return message.ToString();
         }
 
+        /// <summary>
+        /// Checks if the given string maps to a valid/acceptable Time of Day
+        /// </summary>
+        /// <param name="text">The string to be checked</param>
+        /// <returns>Returns true if the given string can be converted to a Time of Day. False, otherwise.</returns>
         public static bool IsValidTimeOfDay(this string text)
         {
             TimeOfDay timeOfDay;
@@ -36,6 +41,11 @@ namespace Domain.Utilities
             
         }
 
+        /// <summary>
+        /// Creates a TimeOfDay enum from a string.
+        /// </summary>
+        /// <param name="text">The string to be converted to the Enum</param>
+        /// <returns></returns>
         public static TimeOfDay ConvertToTimeOfDay(this string text)
         {
             TimeOfDay timeOfDay;

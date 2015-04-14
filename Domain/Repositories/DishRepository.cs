@@ -9,6 +9,9 @@ using Domain.Entites;
 
 namespace Domain.Repositories
 {
+    /// <summary>
+    /// This class emulates a Dish repository.
+    /// </summary>
     public static class DishRepository
     {
         private static List<Dish> _dishesContext = new List<Dish>()
@@ -31,15 +34,12 @@ namespace Domain.Repositories
             set { _dishesContext = value; }
         }
 
-        public static List<Dish> GetByIsdAndTimeOfDay(int[] ids, TimeOfDay timeOfDay)
-        {
-            var dish = _dishesContext.Where(x =>  ids.Contains(x.Id)  &&
-                                               x.TimeOfDay == timeOfDay)
-                                               .ToList();
-
-            return dish;
-        }
-
+        /// <summary>
+        /// Returns the Dish by a pair of id and time of day.
+        /// </summary>
+        /// <param name="id">The dish id</param>
+        /// <param name="timeOfDay">The Time of the Day in wich the dish can be chosen</param>
+        /// <returns></returns>
         public static Dish GetByIdAndTimeOfDay(int id, TimeOfDay timeOfDay)
         {
             var dish = _dishesContext.FirstOrDefault(x => x.Id == id &&

@@ -21,6 +21,7 @@ namespace ConsoleApp
                 {
                     Console.WriteLine();
                     Console.Write("Input: ");
+
                     var userInput = Console.ReadLine();
                     var order = new Order(userInput);
                     
@@ -31,7 +32,6 @@ namespace ConsoleApp
                 {
                     Console.WriteLine(ex.DetailedExceptionMessage());
                 }
-
 
                 ShowApplicationFooter();
 

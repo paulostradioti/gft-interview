@@ -46,7 +46,6 @@
     <Compile Include="Entites\TimeOfDay.cs" />
     <Compile Include="Exceptions\InvalidInputException.cs" />
     <Compile Include="Exceptions\InvalidTimeOfDayException.cs" />
-    <Compile Include="Exceptions\InvalidSelectionException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DishRepository.cs" />
     <Compile Include="Utilities\ExtensionMethos.cs" />

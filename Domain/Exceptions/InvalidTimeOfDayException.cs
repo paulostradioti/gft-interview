@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Exceptions
 {
+    /// <summary>
+    /// Should be raised whenever the user inputs a string that doesn't maps to a vailid TimeOfDay
+    /// </summary>
     class InvalidTimeOfDayException : Exception
     {
         private const string DefaultInvalidTimeOfDayErrorMessage =

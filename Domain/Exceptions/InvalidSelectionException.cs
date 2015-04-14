@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Domain.Exceptions
 {
+    /// <summary>
+    /// Should be raised when the user inserts invalid data in the selection part of the input
+    /// </summary>
     class InvalidSelectionException : Exception
     {
         private const string DefaultInvalidSelectionErrorMessage =
-           "You should select at least one option from the menu.";
+           ;
         public InvalidSelectionException()
             : base(DefaultInvalidSelectionErrorMessage)
         {

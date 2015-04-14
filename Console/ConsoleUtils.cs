@@ -4,6 +4,9 @@ namespace ConsoleApp
 {
     public static class ConsoleUtils
     {
+        /// <summary>
+        /// Prints a dashed line in the console with the same width of the window
+        /// </summary>
         public static void PrintDashedLine()
         {
             for (int i = 0; i < Console.WindowWidth; i++)
