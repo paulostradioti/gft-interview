@@ -13,14 +13,16 @@ namespace Domain.Repositories
     {
         private static List<Dish> _dishesContext = new List<Dish>()
         {
-            new Dish {Id = 1, Name = "eggs", TimeOfDay = TimeOfDay.Morning},
-            new Dish {Id = 2, Name = "Toast", TimeOfDay = TimeOfDay.Morning},
-            new Dish {Id = 3, Name = "coffee", TimeOfDay = TimeOfDay.Morning},
+            
+            new Dish (1,"eggs", DishType.Entree, TimeOfDay.Morning, false),
+            new Dish (2,"Toast", DishType.Side, TimeOfDay.Morning, false),
+            new Dish (3,"coffee", DishType.Drink, TimeOfDay.Morning, true),
+            
+            new Dish (1,"steak", DishType.Entree, TimeOfDay.Night, false),
+            new Dish (2,"potato", DishType.Drink, TimeOfDay.Night, true),
+            new Dish (3,"wine", DishType.Side, TimeOfDay.Night , false),
+            new Dish (4,"cake", DishType.Dessert, TimeOfDay.Night, false)
 
-            new Dish {Id = 1, Name = "steak", TimeOfDay = TimeOfDay.Night},
-            new Dish {Id = 2, Name = "potato", TimeOfDay = TimeOfDay.Night},
-            new Dish {Id = 3, Name = "wine", TimeOfDay = TimeOfDay.Night},
-            new Dish {Id = 4, Name = "cake", TimeOfDay = TimeOfDay.Night}
         };
 
         public static List<Dish> DishesContext

@@ -11,8 +11,8 @@ namespace Domain.Entites
 {
     public class Order
     {
-        public List<Dish> Selections;
-        public TimeOfDay TimeOfDay;
+        public List<Dish> Selections { get; private set; }
+        private TimeOfDay _timeOfDay;
         private string _orderInputText;
 
         public Order(string userInput)
@@ -32,7 +32,7 @@ namespace Domain.Entites
         public void GetTimeOfDay()
         {
             var timeOfDay = UserInputParser.ExtractTimeOfDay(_orderInputText);
-            TimeOfDay = timeOfDay.ConvertToTimeOfDay();
+            _timeOfDay = timeOfDay.ConvertToTimeOfDay();
         }
 
         public void GetDishes()
@@ -43,40 +43,67 @@ namespace Domain.Entites
             bool breakLoop = false;
             for (var i = 0; i < dishesIds.Length && !breakLoop; i++)
             {
-                var dish = DishRepository.GetByIdAndTimeOfDay(dishesIds[i], TimeOfDay);
+                var dish = DishRepository.GetByIdAndTimeOfDay(dishesIds[i], _timeOfDay);
+                dish = CheckSelectionConstraints(dish);
+
                 Selections.Add(dish);
 
+                // if the dish id was not found in the 'database', add a null object, so the system
+                //  will be aware tp print out the 'error' message in the output and stop parsing the input.
                 if (dish == null)
                     breakLoop = true;
             }
         }
 
-        public override string ToString()
+        public Dish CheckSelectionConstraints(Dish dish)
         {
 
-            var selections = Selections.Where(x => x != null).GroupBy(x => new {Id = x.Id, Name = x.Name}) //Group by Id and Name
+            if (Selections.Any(x => dish != null &&
+                                    x.Name == dish.Name &&
+                                   !x.CanOrderMultiple))
+            {
+                return null;
+            }
+
+
+            return dish;
+        }
+
+        public override string ToString()
+        {
+            //Group the Selections by Id and Name
+            //  ordering them by Id (wich, in our implementation, corresponts to the following order:
+            //      entree, side, drink and dessert
+            var selections = Selections.Where(x => x != null).GroupBy(x => new {Id = x.Id, Name = x.Name}) 
                 .Select(p => new
                 {
                     Id = p.Key.Id,
                     Name = p.Key.Name,
                     Count = p.Count()
                 })
-                .OrderBy(x => x.Id); //Orders by Id (wich corresponts to the order entree, side, drink and dessert)
+                .OrderBy(x => x.Id); //
 
+            
             List<string> outputBuffer = new List<string>();
             
-            string stringTimeOfDay = ((TimeOfDay)TimeOfDay).ToString();
+            // First thing to go in the Buffer is the Time of Day
+            string stringTimeOfDay = ((TimeOfDay)_timeOfDay).ToString();
             outputBuffer.Add(stringTimeOfDay);
 
-            var selectionItems = selections.ToList().Select(x => new
+
+            // Then the Selections, grouped by quantity and ordered by type
+            selections.ToList().ForEach(x =>
             {
-                //creates the text like cofee(x3)
-                Text = String.Format("{0}{1}", x.Name, (x.Count > 1 ? "" : String.Format("(x{0})", x.Count))).ToString()
-            }).Select(x => x.ToString()).ToArray();
+                outputBuffer.Add(String.Format("{0}{1}", x.Name, (x.Count > 1 ? String.Format("(x{0})", x.Count) : "")));
+            });
 
-            outputBuffer.AddRange(selectionItems);
-            
 
+            // Finally, we check if there's a null object in the Selection
+            // if there's it's because there's a business rule violation, then, add our final word to the buffer: error.
+            if (Selections.Any(x => x == null))
+            {
+                outputBuffer.Add("error");
+            }
 
             return String.Join(", ", outputBuffer);
         }

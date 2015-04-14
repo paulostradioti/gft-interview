@@ -19,19 +19,13 @@ namespace ConsoleApp
 
                 try
                 {
+                    Console.WriteLine();
+                    Console.Write("Input: ");
                     var userInput = Console.ReadLine();
                     var order = new Order(userInput);
-
-                    Console.WriteLine(order.TimeOfDay);
-                    Console.WriteLine(order.Selections.ToString());
-
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine();
-
+                    
+                    Console.Write("Output: ");
                     Console.WriteLine(order);
-
-
                 }
                 catch (Exception ex)
                 {
@@ -39,18 +33,24 @@ namespace ConsoleApp
                 }
 
 
-                Console.WriteLine("Press any key to continue...");
-                Console.ReadKey();
-                Console.Clear();
+                ShowApplicationFooter();
 
             } while (true);
+        }
+
+        private static void ShowApplicationFooter()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private static void ShowApplicationHeader()
         {
             ConsoleUtils.PrintDashedLine();
 
-            ConsoleUtils.WriteCentered("Please make your selection");
+            ConsoleUtils.WriteCentered("Please make your selection (Ctrl + C to exit)");
 
             ConsoleUtils.PrintDashedLine();
         }

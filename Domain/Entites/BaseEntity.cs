@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace Domain.Entites
 {
+    /// <summary>
+    /// Base Entity provides an Id and a Name that are being used by severam entities in the system. 
+    /// It could be used by persistence purposes, for example.
+    /// </summary>
     public class BaseEntity
     {
-        public int Id { get; set; }
-        public String Name { get; set; }
+        public BaseEntity(int id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
+
+        public int Id { get; private set; }
+        public String Name { get; private set; }
     }
 }

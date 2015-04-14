@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace Domain.Entites
 {
-    public class DishType : BaseEntity
+    public enum DishType
     {
+        Entree, 
+        Side, 
+        Drink,
+        Dessert
     }
 }
