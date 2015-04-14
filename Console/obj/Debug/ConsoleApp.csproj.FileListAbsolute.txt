@@ -1,8 +1,9 @@
-c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\ConsoleApp.exe.config
-c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\ConsoleApp.exe
-c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\ConsoleApp.pdb
-c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\Domain.dll
-c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\Domain.pdb
-c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
-c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\obj\Debug\ConsoleApp.exe
-c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\obj\Debug\ConsoleApp.pdb
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\ConsoleApp.exe.config
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\ConsoleApp.exe
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\ConsoleApp.pdb
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\Domain.dll
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\Domain.pdb
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\obj\Debug\ConsoleApp.exe
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\obj\Debug\ConsoleApp.pdb
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\GetTimeOfDay_ValidInput.xls

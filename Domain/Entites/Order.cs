@@ -17,15 +17,13 @@ namespace Domain.Entites
     public class Order
     {
         public List<Dish> Selections { get; private set; }
-        private TimeOfDay _timeOfDay;
+        public TimeOfDay TimeOfDay { get; private set; }
         private string _orderInputText;
 
         public Order(string userInput)
         {
             _orderInputText = userInput;
             Selections = new List<Dish>();
-
-            ProcessOrder();
         }
 
         /// <summary>
@@ -44,7 +42,7 @@ namespace Domain.Entites
         public void GetTimeOfDay()
         {
             var timeOfDay = UserInputParser.ExtractTimeOfDay(_orderInputText);
-            _timeOfDay = timeOfDay.ConvertToTimeOfDay();
+            TimeOfDay = timeOfDay.ConvertToTimeOfDay();
         }
 
         /// <summary>
@@ -58,7 +56,7 @@ namespace Domain.Entites
             bool breakLoop = false;
             for (var i = 0; i < dishesIds.Length && !breakLoop; i++)
             {
-                var dish = DishRepository.GetByIdAndTimeOfDay(dishesIds[i], _timeOfDay);
+                var dish = DishRepository.GetByIdAndTimeOfDay(dishesIds[i], TimeOfDay);
                 dish = CheckMultipleOrderConstraint(dish);
 
                 Selections.Add(dish);
@@ -112,7 +110,7 @@ namespace Domain.Entites
             List<string> outputBuffer = new List<string>();
             
             // First thing to go in the Buffer is the Time of Day
-            string stringTimeOfDay = ((TimeOfDay)_timeOfDay).ToString();
+            string stringTimeOfDay = ((TimeOfDay)TimeOfDay).ToString();
             outputBuffer.Add(stringTimeOfDay);
 
 

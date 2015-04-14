@@ -1,5 +1,8 @@
-c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\bin\Debug\Domain.Test.dll
-c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\bin\Debug\Domain.Test.pdb
-c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\obj\Debug\Domain.Test.csprojResolveAssemblyReference.cache
-c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\obj\Debug\Domain.Test.dll
-c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\obj\Debug\Domain.Test.pdb
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\bin\Debug\Domain.Test.dll
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\bin\Debug\Domain.Test.pdb
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\bin\Debug\Domain.dll
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\bin\Debug\Domain.pdb
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\obj\Debug\Domain.Test.csprojResolveAssemblyReference.cache
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\obj\Debug\Domain.Test.dll
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\obj\Debug\Domain.Test.pdb
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\bin\Debug\GetTimeOfDay_ValidInput.xls

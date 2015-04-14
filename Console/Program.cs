@@ -24,6 +24,8 @@ namespace ConsoleApp
 
                     var userInput = Console.ReadLine();
                     var order = new Order(userInput);
+
+                    order.ProcessOrder();
                     
                     Console.Write("Output: ");
                     Console.WriteLine(order);
