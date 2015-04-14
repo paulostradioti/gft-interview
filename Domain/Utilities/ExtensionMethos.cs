@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Text.RegularExpressions;
 using Domain.Entites;
 using Domain.Exceptions;
 
@@ -64,10 +65,7 @@ namespace Domain.Utilities
         /// <returns>True if the string can be casted into an integer, false otherwise.</returns>
         public static bool IsInteger(this string text)
         {
-            int integer;
-            bool isInteger = int.TryParse(text, out integer);
-
-            return isInteger;
+            return Regex.IsMatch(text, @"^\d+$");
         }
     }
 }
