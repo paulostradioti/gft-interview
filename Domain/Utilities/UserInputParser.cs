@@ -5,65 +5,55 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain.Entites;
 using Domain.Exceptions;
-using Domain.Repositories;
 
 namespace Domain.Utilities
 {
-    /// <summary>
-    /// This class can be used to Parse the user input into Valid System Entities. 
-    /// On a user input as follows:
-    ///     Input: night, 1, 2, 3
-    /// The Entity Methods Should return: 
-    ///     night for GetTimeOfDay()
-    ///     List of (steak, potato, wine) for GetSelectionList()
-    /// </summary>
     public class UserInputParser
     {
-        public string UserInput { get; private set; }
-
-        public UserInputParser(string userInput)
+        /// <summary>
+        /// Returns the Time of Day (first parameter of the input)
+        /// </summary>
+        /// <returns></returns>
+        public static string ExtractTimeOfDay(string userInput)
         {
-            UserInput = userInput;
-        }
-
-        public TimeOfDay GetTimeOfDay()
-        {
-            var inputEntries = UserInput.Split(',');
+            var inputEntries = userInput.Split(',');
             if (inputEntries == null || inputEntries.Length == 0)
             {
                 throw new InvalidTimeOfDayException();
             }
 
-            TimeOfDay timeOfDay;
-            var strTimeOfDay = inputEntries[0];
-            if (!Enum.TryParse<TimeOfDay>(strTimeOfDay, true, out timeOfDay))
+            if (!inputEntries[0].IsValidTimeOfDay())
             {
                 throw new InvalidTimeOfDayException();
             }
 
-            return timeOfDay;
+            return inputEntries[0];
         }
 
-        public List<Dish> GetSelectionList()
+        public static int[] ExtractDishesIds(string userInput)
         {
-            var selectionList = new List<Dish>();
+            List<int> parsedInts = new List<int>();
 
-            var inputEntries = UserInput.Split(',').Skip(1).Select(int.Parse).ToArray();
-            //There must be a Time of Day and a Selection (at least two itens in the array)
+            var inputEntries = userInput.Split(',').Skip(1).ToArray();
             if (inputEntries == null || inputEntries.Length == 0)
             {
                 throw new InvalidSelectionException();
             }
 
-            selectionList = DishRepository.GetByIsdAndTimeOfDay(inputEntries, this.GetTimeOfDay());
+            foreach (var dishId in inputEntries)
+            {
+                int parsedInt;
+                if (Int32.TryParse(dishId, out parsedInt))
+                {
+                    parsedInts.Add(parsedInt);
+                }
+                else
+                {
+                    throw new InvalidInputException(String.Format("The {0} selection in the input is invalid. Please, check your selection and try again.", dishId));
+                }
+            }
 
-            return selectionList;
+            return parsedInts.ToArray();
         }
-
-        public override string ToString()
-        {
-            return UserInput;
-        }
-
-        }
+    }
 }

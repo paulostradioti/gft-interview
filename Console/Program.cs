@@ -25,6 +25,13 @@ namespace ConsoleApp
                     Console.WriteLine(order.TimeOfDay);
                     Console.WriteLine(order.Selections.ToString());
 
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+
+                    Console.WriteLine(order);
+
+
                 }
                 catch (Exception ex)
                 {

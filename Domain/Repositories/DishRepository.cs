@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Entites;
@@ -31,10 +32,19 @@ namespace Domain.Repositories
         public static List<Dish> GetByIsdAndTimeOfDay(int[] ids, TimeOfDay timeOfDay)
         {
             var dish = _dishesContext.Where(x =>  ids.Contains(x.Id)  &&
-                                               x.TimeOfDay == timeOfDay).ToList();
+                                               x.TimeOfDay == timeOfDay)
+                                               .ToList();
 
             return dish;
         }
 
+        public static Dish GetByIdAndTimeOfDay(int id, TimeOfDay timeOfDay)
+        {
+            var dish = _dishesContext.FirstOrDefault(x => x.Id == id &&
+                                                          x.TimeOfDay == timeOfDay);
+
+            return dish;
+        }
+        
     }
 }

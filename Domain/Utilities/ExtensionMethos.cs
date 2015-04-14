@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Text;
+using Domain.Entites;
+using Domain.Exceptions;
 
 namespace Domain.Utilities
 {
@@ -25,6 +27,21 @@ namespace Domain.Utilities
             } while (exception != null);
 
             return message.ToString();
+        }
+
+        public static bool IsValidTimeOfDay(this string text)
+        {
+            TimeOfDay timeOfDay;
+            return Enum.TryParse<TimeOfDay>(text, true, out timeOfDay);
+            
+        }
+
+        public static TimeOfDay ConvertToTimeOfDay(this string text)
+        {
+            TimeOfDay timeOfDay;
+            Enum.TryParse<TimeOfDay>(text, true, out timeOfDay);
+
+            return timeOfDay;
         }
     }
 }
