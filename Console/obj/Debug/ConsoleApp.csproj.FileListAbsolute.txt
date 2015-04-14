@@ -1,0 +1,8 @@
+c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\ConsoleApp.exe.config
+c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\ConsoleApp.exe
+c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\ConsoleApp.pdb
+c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
+c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\obj\Debug\ConsoleApp.exe
+c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\obj\Debug\ConsoleApp.pdb
+c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\Domain.dll
+c:\users\paulo\documents\visual studio 2013\Projects\GFTInterview\Console\bin\Debug\Domain.pdb
