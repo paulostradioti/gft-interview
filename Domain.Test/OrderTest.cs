@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Domain.Entites;
 using Domain.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -37,6 +38,22 @@ namespace Domain.Test
             var order = new Order(userInput);
 
             order.GetTimeOfDay();
+        }
+
+
+        [TestMethod]
+        [DeploymentItem("ValidInputs_ToString.xls")]
+        [DataSource("System.Data.Odbc", "Driver={Microsoft Excel Driver (*.xls)};DBQ=ValidInputs_ToString.xls;defaultdir=.", "Plan1$", DataAccessMethod.Sequential)]
+        public void TestToString()
+        {
+            var userInput = Convert.ToString(TestContext.DataRow["Input"]);
+            var order = new Order(userInput);
+
+            order.ProcessOrder();
+
+            var expectedOutput = Convert.ToString(TestContext.DataRow["Output"]);
+
+            Assert.AreEqual(order.ToString().ToLower(), expectedOutput.ToLower());
         }
      
     }

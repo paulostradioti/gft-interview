@@ -7,3 +7,4 @@ C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\ob
 C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\obj\Debug\Domain.Test.pdb
 C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\bin\Debug\GetTimeOfDay_ValidInput.xls
 C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\bin\Debug\GetTimeOfDay_InvalidInput.xls
+C:\Users\Paulo\documents\visual studio 2013\Projects\GFTInterview\Domain.Test\bin\Debug\ValidInputs_ToString.xls
