@@ -36,6 +36,9 @@ namespace Domain.Utilities
         /// <returns>Returns true if the given string can be converted to a Time of Day. False, otherwise.</returns>
         public static bool IsValidTimeOfDay(this string text)
         {
+            if (text.IsInteger())
+                return false;
+
             TimeOfDay timeOfDay;
             return Enum.TryParse<TimeOfDay>(text, true, out timeOfDay);
             
@@ -52,6 +55,19 @@ namespace Domain.Utilities
             Enum.TryParse<TimeOfDay>(text, true, out timeOfDay);
 
             return timeOfDay;
+        }
+
+        /// <summary>
+        /// Checks if the given text can be converted to an integer
+        /// </summary>
+        /// <param name="text">The text to be tested</param>
+        /// <returns>True if the string can be casted into an integer, false otherwise.</returns>
+        public static bool IsInteger(this string text)
+        {
+            int integer;
+            bool isInteger = int.TryParse(text, out integer);
+
+            return isInteger;
         }
     }
 }
